@@ -1,18 +1,19 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Icon from "ApideClima/public/iconos/1.svg";
 
 const WeatherCard = () => {
   const [info, setInfo] = useState({});
 
   useEffect(() => {
     axios
-      .get("")
+      .get("https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}")
       .then((resp) => {
         console.log(resp.data);
         setInfo(resp.data);
       })
       .catch((error) => console.error(error));
-  },[]);
+  }, []);
 
   return (
     <div className="main_container">
@@ -25,6 +26,9 @@ const WeatherCard = () => {
       </div>
 
       <div className="weather_card">
+        <div className="icon_container">
+          <img src={Icon} alt="Icono" />
+        </div>
         <h1 className="temperature">19°</h1>
         <div className="environmental_container">
           <p>VIENTO</p>
