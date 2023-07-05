@@ -12,7 +12,7 @@ const WeatherCard = () => {
     navigator.geolocation.getCurrentPosition((position) => {
       axios
         .get(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=f435644d8da0a624ff654c495d94ea50&lang=sp&units=metric`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=5180f77f142492d783f21f2d379b3fbc&lang=sp&units=metric`
         )
         .then((resp) => setData(resp.data))
         .catch((error) => console.error(error));
@@ -28,9 +28,9 @@ const WeatherCard = () => {
       <div className="title">
         <h1>Weather app</h1>
       </div>
-      {/* barra de busqueda */}
+     
       <div class="group">
-        <svg class="bar" aria-hidden="true" viewBox="0 0 24 24">
+        <svg className="bar" aria-hidden="true" viewBox="0 0 24 24">
           <g>
             <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
           </g>
@@ -44,7 +44,7 @@ const WeatherCard = () => {
             ? data.main?.temp?.toFixed(2)
             : ((data.main?.temp * 9) / 5 + 32).toFixed(2)}
           {unit === "metric" ? " °C" : " °F"}
-          <img src={icons[data.weather?.[0].icon]} alt="iconos del tiempo" />
+          <img src={icons[data.weather?.[0].icon]} alt="iconos" />
         </h1>
         <div className="environmental_container">
           <p>VIENTO: {data.wind?.speed} m/s</p>
