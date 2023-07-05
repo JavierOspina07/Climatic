@@ -1,5 +1,3 @@
-
-
 :root {
   /* Header height  */
   --header-height: 56px;
@@ -10,27 +8,23 @@
   --bgligth-100-color: #51b4e8;
   --bgdark-0-color: #53388f;
   --bgdark-100-color: #2f2958;
-  --cardligth-0-color: #E5f2ff;
+  --cardligth-0-color: #e5f2ff;
   --cardligth-97-4-color: #d5f3ff;
-  --bgbotonligth-color: #38A0D8;
+  --bgbotonligth-color: #38a0d8;
   --bgbotondark-color: #7d69f1;
   --title-principal: white;
-  
-
 
   /* Font and typography */
-  --body-font:  'Lato', sans-serif;
-  --T1:95px;
-  --T2:23px;
-  --T3:18px ;
-  --T4:16px;
-  --T5:12px;
-  
-
+  --body-font: "Lato", sans-serif;
+  --T1: 95px;
+  --T2: 23px;
+  --T3: 18px;
+  --T4: 16px;
+  --T5: 12px;
 
   /* Margins  */
-  --sp-0-5: .5rem;
-  --sp-0-75: .75rem;
+  --sp-0-5: 0.5rem;
+  --sp-0-75: 0.75rem;
   --sp-1: 1rem;
   --sp-1-5: 1.5rem;
   --sp-2: 2rem;
@@ -42,7 +36,6 @@
   --z-modal: 2;
 }
 
-
 button,
 input,
 textarea {
@@ -52,7 +45,7 @@ textarea {
 
 /* scroll bar */
 ::-webkit-scrollbar {
-  width: .6rem;
+  width: 0.6rem;
   background: hsl(0, 0%, 74%);
 }
 
@@ -70,16 +63,14 @@ textarea {
   padding: var(--sp-2) 0 var(--sp-1);
 }
 
-
-
-
-html, body {
-
-  background: radial-gradient(var(--bgligth-0-color) 0%, var(--bgligth-100-color) 100%);
+html,
+body {
+  background: radial-gradient(
+    var(--bgligth-0-color) 0%,
+    var(--bgligth-100-color) 100%
+  );
   font-family: var(--body-font);
 }
-
-
 
 .title {
   text-align: left;
@@ -92,10 +83,6 @@ html, body {
   font-weight: bold;
 }
 
-.main_container {
-
-}
-
 .search_bar {
   text-align: center;
   margin-bottom: 0.5rem;
@@ -104,21 +91,17 @@ html, body {
   justify-content: center;
 }
 
-
-
 .weather_card {
   position: relative;
-  background: radial-gradient(#E5F2FF 0%, #D5F3FF 97.4%);
+  background: radial-gradient(#e5f2ff 0%, #d5f3ff 97.4%);
   filter: drop-shadow(0px 4.85px 4.85px rgba(0, 0, 0, 0.25));
   border-radius: 20px;
-  padding: 1rem;
+  padding: 2rem 1rem;
   text-align: center;
   margin: 40px auto;
   max-width: 400px;
   margin-top: 50px;
 }
-  
-
 
 .temperature {
   display: flex;
@@ -127,29 +110,27 @@ html, body {
   font-weight: bold;
   text-align: left;
   color: var(--text-color);
-  margin: 0
- 
+  margin: 0;
+  position: relative;
+  z-index: 1; /* aumentar el z-index para que los párrafos estén por encima de la tarjeta */
 }
-
-
 
 .Climate_Image {
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 2;
 }
 
 .environmental_container {
-  margin-bottom: 1rem;
   text-align: left;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: var(--title-color);
 }
 
-.environmental_container p{
+.environmental_container p {
   margin-bottom: 5px;
 }
-
 
 .bottom_row {
   display: flex;
@@ -162,7 +143,7 @@ html, body {
   text-align: left;
   font-size: 1.4rem;
   font-weight: bold;
-  margin-bottom: 0 ;
+  margin-bottom: 0;
 }
 
 .sky_status {
@@ -171,7 +152,6 @@ html, body {
   margin-right: 0;
   margin-bottom: 0;
   margin-left: auto;
-
 }
 
 .units_button {
@@ -194,7 +174,7 @@ html, body {
   max-width: 400px;
   margin: 0 auto; /* Agrega esto para centrar el contenedor horizontalmente */
 }
- 
+
 .input {
   width: 200%; /* Ancho del elemento de entrada: 200% del contenedor */
   height: 40px; /* Altura del elemento de entrada: 40px */
@@ -206,25 +186,102 @@ html, body {
   outline: none; /* Sin contorno cuando el elemento está enfocado */
   background-color: #f3f3f4; /* Color de fondo del elemento: #f3f3f4 */
   color: #0d0c22; /* Color del texto dentro del elemento: #0d0c22 */
-  transition: .3s ease; /* Transición suave con duración de 0.3s */
+  transition: 0.3s ease; /* Transición suave con duración de 0.3s */
 }
- .input::placeholder {
+.input::placeholder {
   color: #9e9ea7;
- }
- 
- .input:focus, input:hover {
+}
+
+.input:focus,
+input:hover {
   outline: none;
   border-color: var(--bgbotonligth-color);
   background-color: #fff;
   box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
- }
- .bar {
+}
+.bar {
   position: absolute;
   left: 1rem;
   fill: #9e9ea7;
   width: 1rem;
   height: 1rem;
 }
- 
- 
- 
+
+/* ======= Darkmode ======= */
+
+/* The switch - the box around the slider */
+#theme-toggle-button {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 7em;
+  cursor: pointer;
+}
+
+/* Hide default HTML checkbox */
+#toggle {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+#container,
+#patches,
+#stars,
+#button,
+#sun,
+#moon,
+#cloud {
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+}
+
+/* night sky background */
+#toggle:checked + svg #container {
+  fill: #2b4360;
+}
+
+/* move button to right when checked */
+#toggle:checked + svg #button {
+  -webkit-transform: translate(28px, 2.333px);
+      -ms-transform: translate(28px, 2.333px);
+          transform: translate(28px, 2.333px);
+}
+
+/* show/hide sun and moon based on checkbox state */
+#sun {
+  opacity: 1;
+}
+
+#toggle:checked + svg #sun {
+  opacity: 0;
+}
+
+#moon {
+  opacity: 0;
+}
+
+#toggle:checked + svg #moon {
+  opacity: 1;
+}
+
+/* show or hide background items on checkbox state */
+#cloud {
+  opacity: 1;
+}
+
+#toggle:checked + svg #cloud {
+  opacity: 0;
+}
+
+#stars {
+  opacity: 0;
+}
+
+#toggle:checked + svg #stars {
+  opacity: 1;
+}

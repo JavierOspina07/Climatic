@@ -53,7 +53,7 @@ const WeatherCard = () => {
         </svg>
         <input placeholder="Buscar" type="search" className="input" />
       </div>
-      
+
       <div className="weather_card">
         <h1 className="temperature">
           {unit === "metric"
@@ -61,9 +61,9 @@ const WeatherCard = () => {
             : Math.round((data.main?.temp * 9) / 5 + 32)}
           {unit === "metric" ? " °C" : " °F"}
         </h1>
-          <div className="Climate_Image">
-            <img src={icons[data.weather?.[0].icon]} alt="iconos" />
-          </div>
+        <div className="Climate_Image">
+          <img src={icons[data.weather?.[0].icon]} alt="iconos" />
+        </div>
         <div className="environmental_container">
           <p>VIENTO: {data.wind?.speed} m/s</p>
           <p>NUBES: {data.clouds?.all} %</p>
