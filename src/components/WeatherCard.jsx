@@ -45,6 +45,7 @@ const WeatherCard = () => {
       <div className="title">
         <h1>Weather app</h1>
       </div>
+      
       <div className="group">
         <svg className="bar" aria-hidden="true" viewBox="0 0 24 24">
           <g>
