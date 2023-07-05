@@ -92,6 +92,10 @@ html, body {
   font-weight: bold;
 }
 
+.main_container {
+  max-height: 100vh; /* Establece la altura máxima al 100% del viewport */
+  overflow: auto; /* Agrega una barra de desplazamiento si el contenido excede el tamaño máximo */
+}
 
 .search_bar {
   text-align: center;
@@ -110,17 +114,28 @@ html, body {
   padding: 1rem;
   text-align: center;
   margin: 40px auto;
-  max-width: 300px;
+  max-width: 400px;
   margin-top: 50px;
 }
   
 
 
 .temperature {
+  display: flex;
+  align-items: center;
   font-size: 3rem;
   font-weight: bold;
   text-align: left;
   color: var(--text-color)
+}
+
+.temperature h1 {
+  margin-right: 0.5rem;
+}
+
+.Climate_Image {
+  margin-left: 2rem;
+  order: 2; /* Cambio: Cambia el orden del elemento */
 }
 
 .environmental_container {
@@ -170,7 +185,7 @@ html, body {
   align-items: center;
   justify-content: center;
   position: relative;
-  max-width: 190px;
+  max-width: 400px;
   margin: 0 auto; /* Agrega esto para centrar el contenedor horizontalmente */
 }
  

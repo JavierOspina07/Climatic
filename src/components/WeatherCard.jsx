@@ -57,14 +57,16 @@ const WeatherCard = () => {
 
       <div className="weather_card">
         <h1 className="temperature">
-          {unit === "metric"
+          <span>
+            {unit === "metric"
             ? Math.round(data.main?.temp)
             : (Math.round((data.main?.temp * 9) / 5 + 32))}
           {unit === "metric" ? " °C" : " °F"}
-        </h1>
+          </span>
         <div className="Climate_Image">
           <img src={icons[data.weather?.[0].icon]} alt="iconos" />
         </div>
+        </h1>
         <div className="environmental_container">
           <p>VIENTO: {data.wind?.speed} m/s</p>
           <p>NUBES: {data.clouds?.all} %</p>
