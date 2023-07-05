@@ -173,6 +173,7 @@ body {
   position: relative;
   max-width: 400px;
   margin: 0 auto; /* Agrega esto para centrar el contenedor horizontalmente */
+  margin-top: 10%;
 }
 
 .input {
@@ -218,7 +219,6 @@ input:hover {
   display: inline-block;
   width: 7em;
   cursor: pointer;
-  margin-bottom: 10px;
 }
 
 /* Hide default HTML checkbox */
