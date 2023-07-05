@@ -167,7 +167,7 @@ body {
 
 .group {
   display: flex;
-  line-height: 28px;
+  line-height: 40px;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -218,6 +218,7 @@ input:hover {
   display: inline-block;
   width: 7em;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 /* Hide default HTML checkbox */
