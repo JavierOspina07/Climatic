@@ -93,8 +93,7 @@ html, body {
 }
 
 .main_container {
-  max-height: 100vh; /* Establece la altura máxima al 100% del viewport */
-  overflow: auto; /* Agrega una barra de desplazamiento si el contenido excede el tamaño máximo */
+
 }
 
 .search_bar {
@@ -124,10 +123,12 @@ html, body {
 .temperature {
   display: flex;
   align-items: center;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: bold;
   text-align: left;
-  color: var(--text-color)
+  color: var(--text-color);
+  margin: 0
+ 
 }
 
 
@@ -161,6 +162,7 @@ html, body {
   text-align: left;
   font-size: 1.4rem;
   font-weight: bold;
+  margin-bottom: 0 ;
 }
 
 .sky_status {
