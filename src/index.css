@@ -1,56 +1,232 @@
+
+
+:root {
+  /* Header height  */
+  --header-height: 56px;
+  /* Colors  */
+  --text-color: #026eed;
+  --title-color: #56a5f1;
+  --bgligth-0-color: #d5f3ff;
+  --bgligth-100-color: #51b4e8;
+  --bgdark-0-color: #53388f;
+  --bgdark-100-color: #2f2958;
+  --cardligth-0-color: #E5f2ff;
+  --cardligth-97-4-color: #d5f3ff;
+  --bgbotonligth-color: #38A0D8;
+  --bgbotondark-color: #7d69f1;
+  --title-principal: white;
+  
+
+
+  /* Font and typography */
+  --body-font:  'Lato', sans-serif;
+  --T1:95px;
+  --T2:23px;
+  --T3:18px ;
+  --T4:16px;
+  --T5:12px;
+  
+
+
+  /* Margins  */
+  --sp-0-5: .5rem;
+  --sp-0-75: .75rem;
+  --sp-1: 1rem;
+  --sp-1-5: 1.5rem;
+  --sp-2: 2rem;
+  --sp-2-5: 2.5rem;
+  --sp-3: 3rem;
+
+  /* z index  */
+  --z-fixed: 1;
+  --z-modal: 2;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+
+button,
+input,
+textarea {
+  font-family: var(--body-font);
+  font-size: var(--normal-font);
+}
+
+/* scroll bar */
+::-webkit-scrollbar {
+  width: .6rem;
+  background: hsl(0, 0%, 74%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 17%);
+}
+
+/* selection */
+::selection {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+}
+
+.section {
+  padding: var(--sp-2) 0 var(--sp-1);
+}
+
+.title,
+.main_container {
+  max-width: 1024px;
+  margin: 0 1rem;
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(var(--bgligth-0-color) 0%, var(--bgligth-100-color) 100%);
+  font-family: var(--body-font);
+}
+
 .main_container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
   height: 100vh;
-  font-family: Arial, sans-serif;
 }
+
 
 .title {
   margin-top: 0.5rem;
-  text-align: left; /* Mueve el título a la izquierda */
-  width: 100%; /* Ocupa el ancho completo para evitar la alineación centrada */
+  text-align: left;
+  width: 100%;
+  white-space: nowrap; /* Evita que el título se divida en varias líneas */
+  overflow: hidden; /* Oculta el contenido excedente del título */
+  text-overflow: ellipsis; /* Muestra puntos suspensivos (...) si el título es demasiado largo */
+  margin-left: 10%;
+  font-size: var(--normal-font);
+  color: var(--title-principal);
+  font-weight: bold;
 }
 
+
 .search_bar {
-  margin-bottom: 1rem;
-  text-align: center; /* Mantiene el cuadro de búsqueda centrado */
+  text-align: center;
   margin-bottom: 0.5rem;
   width: 100%;
 }
 
 .weather_card {
-  background-color: #7a7676;
+  background: radial-gradient(#E5F2FF 0%, #D5F3FF 97.4%);
+  filter: drop-shadow(0px 4.85px 4.85px rgba(0, 0, 0, 0.25));
   border-radius: 5px;
   padding: 1rem;
   text-align: center;
-  margin: 20px
+  margin: 20px;
+  
 }
 
 .temperature {
   font-size: 3rem;
   font-weight: bold;
   text-align: left;
+  color: var(--text-color)
 }
 
 .environmental_container {
   margin-bottom: 1rem;
   text-align: left;
+  font-size: 0.7rem;
+  color: var(--title-color);
 }
+
+.environmental_container p{
+  margin-bottom: 5px;
+}
+
 
 .bottom_row {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas más pequeñas */
+  color: var(--text-color);
+  font-weight: bold;
 }
 
-.city_container{
+.city_container {
   flex: 1;
   text-align: left;
 }
-
 
 .sky_status {
   flex: 1;
   text-align: right;
 }
+
+.units_button {
+  width: 178px;
+  height: 38px;
+  background-color: var(--bgbotonligth-color);
+  filter: drop-shadow(0px 4.85px 4.85px rgba(0, 0, 0, 0.25));
+  border-radius: 8px;
+  color:var(--text-temperature); 
+}
+
+
+.group {
+  display: flex;
+  line-height: 28px;
+  align-items: center;
+  position: relative;
+  max-width: 190px;
+ }
+ 
+ .input {
+  width: 100%;
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  padding-left: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f3f3f4;
+  color: #0d0c22;
+  transition: .3s ease;
+ }
+ 
+ .input::placeholder {
+  color: #9e9ea7;
+ }
+ 
+ .input:focus, input:hover {
+  outline: none;
+  border-color: var(--bgbotonligth-color);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+ }
+ 
+ .bar {
+  position: absolute;
+  left: 1rem;
+  fill: #9e9ea7;
+  width: 1rem;
+  height: 1rem;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
