@@ -23,7 +23,7 @@ const WeatherCard = () => {
     "11n": "/icons/11n.svg",
     "13n": "/icons/13n.svg",
     "50n": "/icons/50n.svg",
-  }
+  };
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -45,7 +45,6 @@ const WeatherCard = () => {
       <div className="title">
         <h1>Weather app</h1>
       </div>
-     
       <div className="group">
         <svg className="bar" aria-hidden="true" viewBox="0 0 24 24">
           <g>
@@ -54,19 +53,17 @@ const WeatherCard = () => {
         </svg>
         <input placeholder="Buscar" type="search" className="input" />
       </div>
-
+      
       <div className="weather_card">
         <h1 className="temperature">
-          <span>
-            {unit === "metric"
+          {unit === "metric"
             ? Math.round(data.main?.temp)
-            : (Math.round((data.main?.temp * 9) / 5 + 32))}
+            : Math.round((data.main?.temp * 9) / 5 + 32)}
           {unit === "metric" ? " °C" : " °F"}
-          </span>
-        <div className="Climate_Image">
-          <img src={icons[data.weather?.[0].icon]} alt="iconos" />
-        </div>
         </h1>
+          <div className="Climate_Image">
+            <img src={icons[data.weather?.[0].icon]} alt="iconos" />
+          </div>
         <div className="environmental_container">
           <p>VIENTO: {data.wind?.speed} m/s</p>
           <p>NUBES: {data.clouds?.all} %</p>
