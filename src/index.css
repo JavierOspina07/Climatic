@@ -212,7 +212,9 @@ input:hover {
 /* The switch - the box around the slider */
 #theme-toggle-button {
   font-size: 17px;
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
   display: inline-block;
   width: 7em;
   cursor: pointer;
@@ -235,9 +237,9 @@ input:hover {
   -webkit-transition-property: all;
   transition-property: all;
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-transition-duration: 0.25s;
-          transition-duration: 0.25s;
+  transition-duration: 0.25s;
 }
 
 /* night sky background */
@@ -248,8 +250,8 @@ input:hover {
 /* move button to right when checked */
 #toggle:checked + svg #button {
   -webkit-transform: translate(28px, 2.333px);
-      -ms-transform: translate(28px, 2.333px);
-          transform: translate(28px, 2.333px);
+  -ms-transform: translate(28px, 2.333px);
+  transform: translate(28px, 2.333px);
 }
 
 /* show/hide sun and moon based on checkbox state */
