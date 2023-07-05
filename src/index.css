@@ -173,7 +173,7 @@ body {
   position: relative;
   max-width: 400px;
   margin: 0 auto; /* Agrega esto para centrar el contenedor horizontalmente */
-  margin-top: 10%;
+  margin-top: 2%;
 }
 
 .input {
