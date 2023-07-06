@@ -14,15 +14,15 @@ const WeatherCard = () => {
     "11d": "/icons/11d.svg",
     "13d": "/icons/13d.svg",
     "50d": "/icons/50d.svg",
-    "01n": "/icons/01n.svg",
-    "02n": "/icons/02n.svg",
-    "03n": "/icons/03n.svg",
+    "01n": "/icons/01n.png",
+    "02n": "/icons/02n.png",
+    "03n": "/icons/03n.png",
     "04n": "/icons/04n.svg",
     "09n": "/icons/09n.svg",
     "10n": "/icons/10n.svg",
     "11n": "/icons/11n.svg",
     "13n": "/icons/13n.svg",
-    "50n": "/icons/50n.svg",
+    "50n": "/icons/50n.svg"
   };
 
   useEffect(() => {
