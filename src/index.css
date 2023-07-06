@@ -588,3 +588,6 @@ body.dark-mode {
   );
 }
 
+.dark-mode .units_button{
+  background-color: var(--bgbotondark-color); 
+}
