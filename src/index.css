@@ -591,3 +591,9 @@ body.dark-mode {
 .dark-mode .units_button{
   background-color: var(--bgbotondark-color); 
 }
+
+.dark-mode .input{
+  background-color: #1B193A;
+  color: white;
+}
+
