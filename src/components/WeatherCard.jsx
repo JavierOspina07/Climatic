@@ -22,7 +22,7 @@ const WeatherCard = () => {
     if (searchQuery) {
       axios
         .get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${searchQuery}&appid=5180f77f142492d783f21f2d379b3fbc&lang=sp&units=${unit}`
+          `https://api.openweathermap.org/data/2.5/weather?q=${searchQuery}&appid=5180f77f142492d783f21f2d379b3fbc&lang=sp&units=metric`
         )
         .then((resp) => setData(resp.data))
         .catch((error) => console.error(error));
