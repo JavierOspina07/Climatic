@@ -597,3 +597,20 @@ body.dark-mode {
   color: white;
 }
 
+.dark-mode .temperature{
+  color: white;
+}
+
+.dark-mode .environmental_container{
+  color: white;
+}
+
+.dark-mode .city_container{
+  color: white;
+}
+
+.dark-mode .sky_status{
+  color: white;
+}
+
+
