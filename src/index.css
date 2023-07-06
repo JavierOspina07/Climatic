@@ -63,7 +63,7 @@ textarea {
   padding: var(--sp-2) 0 var(--sp-1);
 }
 
-html,
+
 body {
   background: radial-gradient(
     var(--bgligth-0-color) 0%,
@@ -93,7 +93,10 @@ body {
 
 .weather_card {
   position: relative;
-  background: radial-gradient(var(--cardligth-0-color) 0%, var(--cardligth-97-4-color) 97.4%);
+  background: radial-gradient(
+    var(--cardligth-0-color) 0%,
+    var(--cardligth-97-4-color) 97.4%
+  );
   filter: drop-shadow(0px 4.85px 4.85px rgba(0, 0, 0, 0.25));
   border-radius: 10% 90% 10% 30%;
   padding: 2rem 1rem;
@@ -209,82 +212,368 @@ input:hover {
 }
 
 /* ======= Darkmode ======= */
-
-/* The switch - the box around the slider */
-#theme-toggle-button {
-  font-size: 17px;
+.wrapper {
   position: absolute;
-  top: 0;
-  right: 0;
-  display: inline-block;
-  width: 4rem;
-  cursor: pointer;
+  top: 1%;
+  right: 0%;
+  z-index: 2;
+  height: 0rem
 }
 
-/* Hide default HTML checkbox */
-#toggle {
+#hide-checkbox {
   opacity: 0;
-  width: 0;
   height: 0;
+  width: 0
 }
 
-#container,
-#patches,
-#stars,
-#button,
-#sun,
-#moon,
-#cloud {
-  -webkit-transition-property: all;
-  transition-property: all;
-  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-transition-duration: 0.25s;
-  transition-duration: 0.25s;
+.toggle {
+  position: relative;
+  right: -36px;
+  cursor: pointer;
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  background: #190c31cc;
+  border-radius: 50px;
+  transition: .5s;
+  overflow: hidden;
+  transform: scale(.35);
+  border: 1px solid rgba(255,255,255,.341)
 }
 
-/* night sky background */
-#toggle:checked + svg #container {
-  fill: #2b4360;
+.toggle-button {
+  position: absolute;
+  display: inline-block;
+  top: 7px;
+  left: 6px;
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: #FAEAF1;
+  overflow: hidden;
+  box-shadow: 0 0 35px 4px #fff;
+  transition: all .5s ease-out
 }
 
-/* move button to right when checked */
-#toggle:checked + svg #button {
-  -webkit-transform: translate(28px, 2.333px);
-  -ms-transform: translate(28px, 2.333px);
-  transform: translate(28px, 2.333px);
+.crater {
+  position: absolute;
+  display: inline-block;
+  background: #FAEAF1;
+  border-radius: 50%;
+  transition: .5s
 }
 
-/* show/hide sun and moon based on checkbox state */
-#sun {
-  opacity: 1;
+.crater-1 {
+  background: #FFFFF9;
+  width: 86px;
+  height: 86px;
+  left: 10px;
+  bottom: 10px
 }
 
-#toggle:checked + svg #sun {
-  opacity: 0;
+.crater-2 {
+  width: 20px;
+  height: 20px;
+  top: -7px;
+  left: 44px
 }
 
-#moon {
-  opacity: 0;
+.crater-3 {
+  width: 16px;
+  height: 16px;
+  top: 20px;
+  right: -4px
 }
 
-#toggle:checked + svg #moon {
-  opacity: 1;
+.crater-4 {
+  width: 10px;
+  height: 10px;
+  top: 24px;
+  left: 30px
 }
 
-/* show or hide background items on checkbox state */
-#cloud {
-  opacity: 1;
+.crater-5 {
+  width: 15px;
+  height: 15px;
+  top: 40px;
+  left: 48px
 }
 
-#toggle:checked + svg #cloud {
-  opacity: 0;
+.crater-6 {
+  width: 10px;
+  height: 10px;
+  top: 48px;
+  left: 20px
 }
 
-#stars {
-  opacity: 0;
+.crater-7 {
+  width: 12px;
+  height: 12px;
+  bottom: 5px;
+  left: 35px
 }
 
-#toggle:checked + svg #stars {
-  opacity: 1;
+.star {
+  position: absolute;
+  display: inline-block;
+  border-radius: 50%;
+  background: #FFF;
+  box-shadow: 1px 0 2px 2px #fff
 }
+
+.star-1 {
+  width: 6px;
+  height: 6px;
+  right: 90px;
+  bottom: 40px
+}
+
+.star-2 {
+  width: 8px;
+  height: 8px;
+  right: 70px;
+  top: 10px
+}
+
+.star-3 {
+  width: 5px;
+  height: 5px;
+  right: 60px;
+  bottom: 15px
+}
+
+.star-4 {
+  width: 3px;
+  height: 3px;
+  right: 40px;
+  bottom: 50px
+}
+
+.star-5 {
+  width: 4px;
+  height: 4px;
+  right: 10px;
+  bottom: 35px
+}
+
+.star-6,.star-7,.star-8 {
+  width: 10px;
+  height: 2px;
+  border-radius: 2px;
+  transform: rotate(-45deg);
+  box-shadow: 5px 0 4px 1px #fff;
+  animation-name: travel;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite
+}
+
+.star-6 {
+  right: 30px;
+  bottom: 30px;
+  animation-delay: -2s
+}
+
+.star-7 {
+  right: 50px;
+  bottom: 60px
+}
+
+.star-8 {
+  right: 90px;
+  top: 10px;
+  animation-delay: -4s
+}
+
+@keyframes travel {
+  0% {
+      transform: rotate(-45deg) translate(70px)
+  }
+
+  50% {
+      transform: rotate(-45deg) translate(-20px);
+      box-shadow: 5px 0 6px 1px #fff
+  }
+
+  to {
+      transform: rotate(-45deg) translate(-30px);
+      width: 2px;
+      height: 2px;
+      opacity: 0;
+      box-shadow: none
+  }
+}
+
+#hide-checkbox:checked+.toggle {
+  background: #24d7f719
+}
+
+#hide-checkbox:checked+.toggle .toggle-button {
+  background: #F7FFFF;
+  transform: translate(102px);
+  box-shadow: 0 0 35px 5px #fff
+}
+
+#hide-checkbox:checked+.toggle .toggle-button .crater {
+  transform: rotate(-45deg) translate(70px)
+}
+
+#hide-checkbox:checked+.toggle .star {
+  animation: move 2s infinite;
+  transform: none;
+  box-shadow: none
+}
+
+#hide-checkbox:checked+.toggle .star-1 {
+  width: 40px;
+  height: 10px;
+  border-radius: 10px;
+  background: #FFF;
+  left: 20px;
+  top: 25px;
+  box-shadow: none
+}
+
+#hide-checkbox:checked+.toggle .star-2 {
+  width: 12px;
+  height: 12px;
+  background: #FFF;
+  left: 26px;
+  top: 23px;
+  box-shadow: -1px 0 2px #0000001a
+}
+
+#hide-checkbox:checked+.toggle .star-3 {
+  width: 16px;
+  height: 16px;
+  background: #FFF;
+  left: 35px;
+  top: 19px;
+  box-shadow: -1px 0 2px #0000001a
+}
+
+#hide-checkbox:checked+.toggle .star-4 {
+  width: 14px;
+  height: 14px;
+  background: #FFF;
+  left: 46px;
+  top: 21px;
+  box-shadow: -1px 0 2px #0000001a
+}
+
+#hide-checkbox:checked+.toggle .star-5 {
+  width: 60px;
+  height: 15px;
+  border-radius: 15px;
+  background: #FFF;
+  left: 30px;
+  bottom: 20px;
+  box-shadow: none
+}
+
+#hide-checkbox:checked+.toggle .star-6 {
+  width: 18px;
+  height: 18px;
+  background: #FFF;
+  border-radius: 50%;
+  left: 38px;
+  bottom: 20px;
+  box-shadow: -1px 0 2px #0000001a
+}
+
+#hide-checkbox:checked+.toggle .star-7 {
+  width: 24px;
+  height: 24px;
+  background: #FFF;
+  border-radius: 50%;
+  left: 52px;
+  bottom: 20px;
+  box-shadow: -1px 0 2px #0000001a
+}
+
+#hide-checkbox:checked+.toggle .star-8 {
+  width: 21px;
+  height: 21px;
+  background: #FFF;
+  border-radius: 50%;
+  left: 70px;
+  top: 59px;
+  box-shadow: -1px 0 2px #0000001a
+}
+
+@keyframes move {
+  0% {
+      transform: none
+  }
+
+  25% {
+      transform: translate(2px)
+  }
+
+  to {
+      transform: translate(-2px)
+  }
+}
+
+p.morning {
+  background: #e67e22
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0;
+  margin: auto
+}
+
+.background {
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  background-color: #19171794;
+  z-index: 3;
+  backdrop-filter: blur(15px)
+}
+
+.loader:after {
+  content: "";
+  width: 48px;
+  height: 48px;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  border-radius: 50% 50% 0;
+  border: 15px solid #FFF;
+  transform: rotate(45deg) translate(0);
+  box-sizing: border-box;
+  animation: animMarker .4s ease-in-out infinite alternate
+}
+
+.loader:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 150%;
+  width: 24px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(0,0,0,.2);
+  animation: animShadow .4s ease-in-out infinite alternate
+}
+
+
+/* ===== dark mode ===== */
+
+body.dark-mode {
+  background: radial-gradient(var(--bgdark-0-color) 0%,
+  var(--bgdark-100-color) 97.4%);
+  color: #fff;
+}
+

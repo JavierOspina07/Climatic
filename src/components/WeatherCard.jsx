@@ -20,7 +20,7 @@ const WeatherCard = () => {
     setUnit(unit === "metric" ? "imperial" : "metric");
   };
 
-  const alt = data.weather && data.weather[0] && data.weather[0].description;
+  const alt = data?.weather?.[0].description;
   const icon = data?.weather?.[0].icon;
 
   return (
@@ -42,23 +42,28 @@ const WeatherCard = () => {
         <h1 className="temperature">
           {unit === "metric"
             ? Math.round(data.main?.temp)
-            : Math.round((data.main?.temp * 9) / 5 + 32)}
+            : Math.round((data.main?.temp * 9) / 5 + 32)
+          }
           {unit === "metric" ? " °C" : " °F"}
         </h1>
+
         <div className="Climate_Image">
           <img src={`./icons/${icon}.svg`} alt={alt} className="icon_weather" />
         </div>
+
         <div className="environmental_container">
           <p>VIENTO: {data.wind?.speed} m/s</p>
           <p>NUBES: {data.clouds?.all} %</p>
           <p>PRESIÓN: {data.main?.pressure} hPa </p>
         </div>
+
         <div className="bottom_row">
           <div className="city_container">
             <p>
               {data.name}, {data.sys?.country}
             </p>
           </div>
+
           <div className="sky_status">
             <p>{data.weather?.[0].description}</p>
           </div>
