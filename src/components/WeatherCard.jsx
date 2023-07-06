@@ -16,7 +16,7 @@ const WeatherCard = () => {
     "50d": "/icons/50d.svg",
     "01n": "/icons/01n.png",
     "02n": "/icons/02n.png",
-    "03n": "/icons/03n.png",
+    "03n": "/icons/03n.svg",
     "04n": "/icons/04n.svg",
     "09n": "/icons/09n.svg",
     "10n": "/icons/10n.svg",
