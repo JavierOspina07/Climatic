@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const DarkMode = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   const toggleDarkMode = () => {
     const body = document.querySelector("body");
@@ -15,7 +15,7 @@ const DarkMode = () => {
           type="checkbox"
           id="hide-checkbox"
           checked={darkMode}
-          onChange={toggleDarkMode}
+          onClick={toggleDarkMode}
         />
         <label htmlFor="hide-checkbox" className="toggle">
           <span className="toggle-button">
