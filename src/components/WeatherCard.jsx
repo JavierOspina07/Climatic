@@ -4,9 +4,8 @@ import { useState, useEffect } from "react";
 const WeatherCard = () => {
   const [data, setData] = useState({});
   const [unit, setUnit] = useState("metric");
-  const [searchQuery, setSearchQuery] = useState("")
+  const [searchQuery, setSearchQuery] = useState("");
 
-  
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       axios
@@ -24,7 +23,9 @@ const WeatherCard = () => {
         .get(
           `https://api.openweathermap.org/data/2.5/weather?q=${searchQuery}&appid=5180f77f142492d783f21f2d379b3fbc&lang=sp&units=metric`
         )
-        .then((resp) => setData(resp.data))
+        .then((resp) => {
+          setData(resp.data);
+        })
         .catch((error) => console.error(error));
     }
   }, [searchQuery, unit]);
@@ -33,9 +34,11 @@ const WeatherCard = () => {
     setUnit(unit === "metric" ? "imperial" : "metric");
   };
 
-  const handleChange = (event) => {
-    setSearchQuery(event.target.value);
+  const handleChange = (e) => {
+    setSearchQuery(e.target.value.trim());
   };
+
+
 
   const alt = data?.weather?.[0].description;
   const icon = data?.weather?.[0].icon;
@@ -52,15 +55,20 @@ const WeatherCard = () => {
             <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
           </g>
         </svg>
-        <input placeholder="Buscar" type="search" className="input" value = {searchQuery} onChange={handleChange}/>
+        <input
+          placeholder="Buscar"
+          type="search"
+          className="input"
+          value={searchQuery}
+          onChange={handleChange}
+        />
       </div>
 
       <div className="weather_card">
         <h1 className="temperature">
           {unit === "metric"
             ? Math.round(data.main?.temp)
-            : Math.round((data.main?.temp * 9) / 5 + 32)
-          }
+            : Math.round((data.main?.temp * 9) / 5 + 32)}
           {unit === "metric" ? " °C" : " °F"}
         </h1>
 
