@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './style/DarkMode.css'
 
 const DarkMode = () => {
   const [darkMode, setDarkMode] = useState(true);

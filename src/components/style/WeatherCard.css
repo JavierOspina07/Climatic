@@ -1,0 +1,140 @@
+
+.title {
+    text-align: left;
+    width: fit-content; /* Cambio: establece el ancho del título según su contenido */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: var(--normal-font);
+    color: var(--title-principal);
+    font-weight: bold;
+  }
+  
+  .search_bar {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .weather_card {
+    position: relative;
+    background: radial-gradient(
+      var(--cardligth-0-color) 0%,
+      var(--cardligth-97-4-color) 97.4%
+    );
+    filter: drop-shadow(0px 4.85px 4.85px rgba(0, 0, 0, 0.25));
+    border-radius: 10% 90% 10% 30%;
+    padding: 2rem 1rem;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 400px;
+    margin-top: 50px;
+  }
+  
+  .temperature {
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: left;
+    color: var(--text-color);
+    margin: 0;
+    position: relative;
+    z-index: 1; /* aumentar el z-index para que los párrafos estén por encima de la tarjeta */
+  }
+  
+  .Climate_Image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+  }
+  
+  .environmental_container {
+    text-align: left;
+    font-size: 0.8rem;
+    color: var(--title-color);
+  }
+  
+  .environmental_container p {
+    margin-bottom: 5px;
+  }
+  
+  .bottom_row {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-color);
+    font-weight: bold;
+  }
+  
+  .city_container {
+    text-align: left;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  
+  .sky_status {
+    /* text-align: right; */
+    margin-top: 11px;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+  }
+  
+  .units_button {
+    width: 178px;
+    height: 38px;
+    background-color: var(--bgbotonligth-color);
+    filter: drop-shadow(0px 4.85px 4.85px rgba(0, 0, 0, 0.25));
+    border-radius: 8px;
+    color: var(--text-temperature);
+    margin: 0 auto; /* Agrega esta propiedad para centrar horizontalmente el botón */
+    display: block; /* Asegura que el botón se comporte como un bloque */
+  }
+  
+  .group {
+    display: flex;
+    line-height: 40px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto; /* Agrega esto para centrar el contenedor horizontalmente */
+    margin-top: 2%;
+  }
+  
+  .input {
+    width: 200%; /* Ancho del elemento de entrada: 200% del contenedor */
+    height: 40px; /* Altura del elemento de entrada: 40px */
+    line-height: 28px; /* Altura de línea del texto dentro del elemento: 28px */
+    padding: 0 1rem; /* Relleno en la parte superior e inferior: 0px, Relleno en los lados derecho e izquierdo: 1rem */
+    padding-left: 2.5rem; /* Relleno adicional en el lado izquierdo: 2.5rem */
+    border: 2px solid transparent; /* Borde de 2px sólido y transparente */
+    border-radius: 8px; /* Radio de borde: 8px */
+    outline: none; /* Sin contorno cuando el elemento está enfocado */
+    background-color: #f3f3f4; /* Color de fondo del elemento: #f3f3f4 */
+    color: #0d0c22; /* Color del texto dentro del elemento: #0d0c22 */
+    transition: 0.3s ease; /* Transición suave con duración de 0.3s */
+  }
+  .input::placeholder {
+    color: #9e9ea7;
+  }
+  
+  .input:focus,
+  input:hover {
+    outline: none;
+    border-color: var(--bgbotonligth-color);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+  }
+  .bar {
+    position: absolute;
+    left: 1rem;
+    fill: #9e9ea7;
+    width: 1rem;
+    height: 1rem;
+  }
+  
