@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import './style/DarkMode.css'
 
 const DarkMode = () => {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     // Obtener el modo oscuro del almacenamiento local al cargar el componente
