@@ -1,12 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './style/DarkMode.css'
 
 const DarkMode = () => {
   const [darkMode, setDarkMode] = useState(true);
 
-  const toggleDarkMode = () => {
+  useEffect(() => {
+    // Obtener el modo oscuro del almacenamiento local al cargar el componente
+    const savedMode = localStorage.getItem("darkMode");
+    if (savedMode) {
+      setDarkMode(JSON.parse(savedMode));
+    }
+  }, []);
+
+  useEffect(() => {
+    // Guardar el modo oscuro en el almacenamiento local al cambiar su estado
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
+
+    // Aplicar cambios en el modo oscuro al montar y actualizar el componente
     const body = document.querySelector("body");
-    body.classList.toggle("dark-mode");
+    if (darkMode) {
+      body.classList.add("dark-mode");
+    } else {
+      body.classList.remove("dark-mode");
+    }
+  }, [darkMode]);
+
+  const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
 
