@@ -41,10 +41,6 @@ const WeatherCard = () => {
   };
 
 
-
-  const alt = data?.weather?.[0].description;
-  const icon = data?.weather?.[0].icon;
-
   return (
     <section className="main_container">
       <div className="title">
@@ -70,12 +66,16 @@ const WeatherCard = () => {
         <h1 className="temperature">
           {unit === "metric"
             ? Math.round(data.main?.temp)
-            : Math.round((data.main?.temp * 9) / 5 + 32)}
-          {unit === "metric" ? " °C" : " °F"}
+            : Math.round((data.main?.temp * 9) / 5 + 32)
+          }
+          {unit === "metric" 
+            ? " °C" 
+            : " °F"
+          }
         </h1>
 
         <div className="Climate_Image">
-          <img src={`./icons/${icon}.svg`} alt={alt} className="icon_weather" />
+          <img src={`./icons/${data?.weather?.[0].icon}.svg`} alt={data?.weather?.[0].description} className="icon_weather" />
         </div>
 
         <div className="environmental_container">
