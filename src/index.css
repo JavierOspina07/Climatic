@@ -53,12 +53,12 @@ textarea {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(0, 0%, 17%);
+  background: var(--bgligth-0-color);
 }
 
 /* selection */
 ::selection {
-  background-color: var(--primary-color);
+  background-color: var(--bgligth-100-color);
   color: var(--bg-color);
 }
 
