@@ -4,7 +4,7 @@ import "./style/Loader.css"
 const Loader = () => {
   return (
     <div className="Loader">
-      <div className="container">
+      <div className="Loader_container">
         <div className="cloud front">
           <span className="left-front"></span>
           <span className="right-front"></span>
