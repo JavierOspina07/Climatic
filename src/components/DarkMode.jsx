@@ -34,7 +34,7 @@ const DarkMode = () => {
         <input
           type="checkbox"
           id="hide-checkbox"
-          defaultChecked={darkMode}
+          defaultChecked={!darkMode}
           onChange={toggleDarkMode}
         />
         <label htmlFor="hide-checkbox" className="toggle">
