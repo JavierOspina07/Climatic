@@ -2,7 +2,7 @@
 /* ======= Darkmode ======= */
 .wrapper {
     position: absolute;
-    top: 1%;
+    top: 0%;
     right: 0%;
     z-index: 2;
     height: 0rem
@@ -25,7 +25,7 @@
     border-radius: 50px;
     transition: .5s;
     overflow: hidden;
-    transform: scale(.35);
+    transform: scale(.35); /* tamaño del boton */
     border: 1px solid rgba(255,255,255,.341)
   }
   
